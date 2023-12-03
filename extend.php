@@ -29,8 +29,11 @@ return [
     (new Extend\Model(User::class))
         ->cast('user_flair', 'string'),
 
+    (new Extend\User())
+        ->displayNameDriver('simple-flair', SimpleFlairDriver::class),
+
     (new Extend\Settings())
-        ->default('user_flair.default_flair', '')
+        ->default('user_flair.default_flair', 'Member')
         ->default('user_flair.validator.regex', '^[a-zA-Z0-9\s]*$')
         ->default('user_flair.validator.min-length', 1)
         ->default('user_flair.validator.max-length', 100),
