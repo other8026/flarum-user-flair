@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Other8026\\UserFlair;
+//namespace Other8026\\UserFlair;
 
 use Flarum\Extend;
 
