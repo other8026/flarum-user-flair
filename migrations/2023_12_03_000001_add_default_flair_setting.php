@@ -3,5 +3,5 @@
 use Flarum\Database\Migration;
 
 return Migration::addSettings([
-    'userFlairDefaultFlair' => ''
+    'user_flair_default_flair' => ''
 ]);
