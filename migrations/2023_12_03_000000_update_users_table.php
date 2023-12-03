@@ -9,15 +9,15 @@ use Illuminate\Database\Schema\Builder;
 
 return [
     'up' => function (Builder $schema) {
-        if (! $schema->hasColumn('users', 'role-flair')) {
+        if (! $schema->hasColumn('users', 'user-flair_flair')) {
             $schema->table('users', function (Blueprint $table) {
-                $table->string('role-flair', 100)->index()->nullable();
+                $table->string('user-flair_flair', 100)->index()->nullable();
             });
         }
     },
     'down' => function (Builder $schema) {
         $schema->table('users', function (Blueprint $table) {
-            $table->dropColumn('role-flair');
+            $table->dropColumn('user-flair_flair');
         });
     }
 ];
