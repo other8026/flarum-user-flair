@@ -11,6 +11,7 @@
 
 namespace Other8026\UserFlair;
 
+use Flarum\Api\Serializer\UserSerializer;
 use Flarum\Extend;
 use Flarum\User\User;
 use Other8026\UserFlair\Access\UserPolicy;
@@ -28,6 +29,9 @@ return [
 
     (new Extend\Model(User::class))
         ->cast('user_flair', 'string'),
+
+    (new Extend\ApiSerializer(UserSerializer::class))
+        ->attributes(AddUserFlairAttributes::class),
 
     (new Extend\User())
         ->displayNameDriver('simple-flair', SimpleFlairDriver::class),
