@@ -19,7 +19,9 @@ class UserPolicy extends AbstractPolicy
      */
     public function editFlair(User $actor, User $user)
     {
-        if ($actor->can('edit', $user)) {
+        if (!$actor->isAdmin() && $user->isAdmin()) {
+            return $this->deny();
+        } else if ($actor->can('edit', $user)) {
             return $this->allow();
         } else {
             return $this->deny();

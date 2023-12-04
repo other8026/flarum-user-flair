@@ -36,7 +36,7 @@ class AddUserFlairAttributes
             $flair = null;
         }
 
-        $canSetUserFlair = $serializer->getActor()->can('edit', $user);
+        $canSetUserFlair = $serializer->getActor()->can('editFlair', $user);
 
         $attributes['userFlair'] = $flair;
         $attributes['canSetUserFlair'] = $canSetUserFlair;
