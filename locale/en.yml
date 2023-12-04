@@ -7,3 +7,5 @@ other8026-user-flair:
     invalid: flair is invalid
 
   forum:
+    user_controls:
+      set_flair_button: Set user's flair
