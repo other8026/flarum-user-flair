@@ -35,12 +35,12 @@ class FlairValidator
         $rules['user_flair'] = [
             function ($attribute, $value, $fail) {
                 $regex = $this->settings->get('user_flair.validator.regex');
-                if ($regex && ! preg_match_all("/$regex/", $value)) {
+                if ($regex && !preg_match_all("/$regex/", $value)) {
                     $fail($this->translator->trans('other8026-user-flair.api.invalid'));
                 }
             },
-            'min:'.$this->settings->get('user_flair.validator.min-length'),
-            'max:'.$this->settings->get('user_flair.validator.max-length'),
+            'min:' . $this->settings->get('user_flair.validator.min-length'),
+            'max:' . $this->settings->get('user_flair.validator.max-length'),
             'nullable'
         ];
 

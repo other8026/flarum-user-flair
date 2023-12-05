@@ -8,5 +8,5 @@ import User from 'flarum/common/models/User';
 export default [
   new Extend.Model(User)
     .attribute<boolean>('canSetUserFlair')
-    .attribute<String|null>('userFlair')
+    .attribute<String | null>('userFlair')
 ];

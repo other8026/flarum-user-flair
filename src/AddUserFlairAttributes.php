@@ -21,6 +21,7 @@ class AddUserFlairAttributes
     {
         $this->settings = $settings;
     }
+
     public function __invoke(UserSerializer $serializer, User $user): array
     {
         $attributes = [];
